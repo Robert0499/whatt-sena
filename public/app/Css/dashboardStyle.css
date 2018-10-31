@@ -1,0 +1,9 @@
+nav {
+  background: rgb(0, 65, 97);
+}
+i {
+  cursor: pointer;
+}
+.img-resp {
+  max-width: 5vw;
+}

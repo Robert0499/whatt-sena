@@ -1,0 +1,100 @@
+<nav class="navbar  navbar-light text-white">
+	<a class="navbar-brand">
+		<h3>WhatSena</h3>
+	</a>
+	<div class="">
+		<form class="form-inline my-2 my-lg-0">
+			<i class="fa fa-power-off fa-2x my-2 my-sm-0 text-danger"></i>
+		</form>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12 mt-5">
+			<div class="card text-center">
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">Foto</th>
+									<th scope="col">Ficha</th>
+									<th scope="col">Nombre</th>
+									<th scope="col">Ver</th>
+									<th scope="col">Eliminar</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="data in array">
+									<th scope="row">
+										<img src="{{data.foto}}" class="img-fluid rounded-circle img-resp">
+									</th>
+									<td>{{data.numero_ficha}}</td>
+									<td>{{data.nombre_ficha}}</td>
+									<td>
+										<i class="fa fa-eye fa-2x"></i>
+									</td>
+									<td>
+										<i class="fa fa-trash fa-2x"></i>
+									</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="container d-flex justify-content-end mt-2">
+				<button class="btn btn-primary" ng-click="open()">Agregar Ficha</button>
+				<button class="btn btn-success ml-1" ng-click="download()">Descargar Formato</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="show1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Agregar Fichas</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form name="form" ng-submit="addFicha()" id="addF">
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<label>No. Ficha</label>
+							<input class="form-control" type="number" placeholder="Ficha" required ng-model="user.ficha" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Nombre</label>
+							<input type="text" class="form-control" placeholder="Nombre ficha" ng-model="user.nombre_ficha" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Descripcion</label>
+							<textarea class="form-control" max-rows="3" required ng-model="user.descripcion"></textarea>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Imagen</label>
+							<input type="file" class="button form-control" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'"
+							 ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Importar aprendices</label>
+							<input type="file" class="button form-control" ngf-select ng-model="user.aprendices" name="aprendices" ngf-pattern="'.xls,.xlsx'"
+							 ngf-accept="'.xls, .xlsx'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}" required>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-success">Crear</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

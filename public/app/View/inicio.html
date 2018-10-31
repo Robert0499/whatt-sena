@@ -1,0 +1,27 @@
+<div class="container-fluid  d-flex justify-content-center m-0">
+	<div class="row">
+		<div class="up"></div>
+		<div class="down"></div>
+		<div class="card col-11 col-sm-8 col-md-6 col-lg-5 ingreso">
+			<div class="card-header text-center">
+				<h2>Ingreso</h2>
+			</div>
+			<div class="card-body">
+				<form ng-submit="ingreso()">
+					<div class="form-group">
+						<label f or="correo">Correo:</label>
+						<input type="email" class="form-control" id="correo" ng-model="usuario.correo" required>
+					</div>
+					<div class="form-group">
+						<label for="clave">Contraseña:</label>
+						<input type="password" class="form-control" id="clave" ng-model="usuario.contrasena" required>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn1 text-white form-control">Ingresar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>

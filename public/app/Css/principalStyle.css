@@ -1,0 +1,59 @@
+body {
+  overflow: hidden;
+}
+.max {
+  max-width: 99%;
+}
+.dropleft .dropdown-toggle::before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 0.255em;
+  vertical-align: 0.255em;
+  content: none;
+  border-top: 0.3em solid transparent;
+  border-right: 0.3em solid;
+  border-bottom: 0.3em solid transparent;
+}
+.left {
+  height: calc(100vh - 64px);
+  background: rgb(0, 150, 224);
+  border-radius: 0;
+}
+nav {
+  background: rgb(0, 65, 97);
+}
+i {
+  cursor: pointer;
+}
+.center {
+  height: calc(100vh - 64px);
+}
+
+.ca-body {
+  overflow-y: scroll;
+}
+.right {
+  height: calc(100vh - 64px);
+}
+.img {
+  width: 10vw;
+  height: 20vh;
+}
+.mensaje {
+  max-width: 40%;
+  max-height: max-content;
+}
+.ca-head {
+  background: rgb(0, 150, 224);
+}
+.img-resp {
+  max-height: 20vh;
+}
+.ca-body-left {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+.dropdown-menu > a:hover {
+  background-color: gray;
+}

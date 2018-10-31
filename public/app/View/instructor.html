@@ -1,0 +1,90 @@
+<nav class="navbar navbar-light text-white">
+	<a class="navbar-brand">
+		<h3>WhatSena</h3>
+	</a>
+	<div class="dropdown dropleft">
+		<button class="btn d-block d-md-none dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="#">Action</a>
+			<a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a>
+		</div>
+	</div>
+
+	<div class="d-none d-md-block">
+		<form class="form-inline my-2 my-lg-0">
+			<i class="fa fa-user fa-2x  mr-sm-2"></i>
+			<i class="fa fa-power-off fa-2x my-2 my-sm-0 text-danger"></i>
+		</form>
+	</div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-3 col-xl-2 p-0">
+			<div class="card  left text-center text-white d-none d-md-block">
+				<div class="card-header">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fa fa-search fa-1x"></i>
+								</span>
+							</div>
+							<input class="form-control " placeholder="Buscar Ficha" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="form-row">
+						<div class="form-group" ng-repeat="data in array">
+							<img src="{{data.foto}}" class="img-fluid">
+							<span>{{data.nombre_ficha}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 p-0 col-md-6">
+			<div class="card center text-center">
+				<div class="card-header">
+					ADSI
+				</div>
+				<div class="card-body ca-body">
+					asdsadsad
+				</div>
+				<div class="card-footer">
+					<form action="">
+						<div class="form-row">
+							<div class="form-group col-md-8">
+								<input class="form-control " type="text" placeholder="Mensaje">
+							</div>
+							<div class="form-group col-md-4">
+								<button class="btn btn-primary form-control">Enviar</button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-3 col-xl-4 p-0">
+			<div class="card right text-center  d-none d-md-block">
+				<div class="card-footer">
+					<img src="{{foto_ficha}}" class="img-fluid rounded img">
+				</div>
+				<div class="card-body">
+					<span>{{numero_ficha}}</span>
+					<br>
+					<span>{{nombre_ficha}}</span>
+					<h3>Descripción</h3>
+					<p>{{descripcion_ficha}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

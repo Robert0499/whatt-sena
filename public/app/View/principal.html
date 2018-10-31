@@ -1,0 +1,142 @@
+<nav class="navbar navbar text-white">
+	<a class="navbar-brand">
+		<h3>WhatSena</h3>
+	</a>
+	<div class="dropdown dropleft">
+		<button class="btn d-block d-md-none dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="#">Participantes</a>
+			<a class="dropdown-item" ng-click="open()">Editar perfil</a>
+			<a class="dropdown-item" href="#">Descripcion</a>
+			<a class="dropdown-item" ng-click="cerrar()">Salir</a>
+		</div>
+	</div>
+
+
+	<div class="d-none d-md-block">
+		<form class="form-inline my-2 my-lg-0">
+			<i class="fa fa-user fa-2x  mr-sm-2" ng-click="open()"></i>
+			<i class="fa fa-power-off fa-2x my-2 my-sm-0 text-danger" ng-click="cerrar()"></i>
+		</form>
+	</div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2 p-0">
+			<div class="card  left text-white d-none d-md-block">
+				<div class="card-header text-center">
+					1364760 ADSI
+				</div>
+				<div class="card-body ca-body-left">
+					<div class="form-row">
+						<div class="form-group max" ng-repeat="data in array">
+							<img src="{{data.foto}}" class="img-fluid" style="max-width: 18%;">
+							<span>{{data.primer_nombre}} {{ data.primer_apellido}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 p-0 col-md-6">
+			<div class="card center text-center">
+				<div class="card-header">
+					ADSI
+				</div>
+				<div class="card-body 	 text-center" id="boxMessage">
+					<div class="row  d-flex justify-content-center " ng-repeat="array in mensajes">
+						<div class="card mensaje  col-12 mb-5 p-0">
+							<div class="card-header ca-head text-white">
+								{{array.nombre}} {{array.apellido}}
+							</div>
+							<div class="card-body " ng-focus="array.length">
+								{{array.mensaje}}
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="card-footer">
+					<form ng-submit="postChat()" id="formeje">
+						<div class="form-row">
+							<div class="form-group col-md-8">
+								<input class="form-control " type="text" placeholder="Mensaje" ng-model="message.mensaje">
+							</div>
+							<div class="form-group col-md-4">
+								<button type="submit" class="btn btn-primary form-control">Enviar</button>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-4 p-0">
+			<div class="card right text-center  d-none d-md-block">
+				<div class="card-footer">
+					<img src="{{img_grupo}}" class="img-fluid rounded img">
+				</div>
+				<div class="card-body">
+					<span>{{numero_ficha}}</span>
+					<br>
+					<span>{{nombre_ficha}}</span>
+					<h3>Descripción</h3>
+					<p>{{descripcion_ficha}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="show1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body text-center">
+				<form name="form" ng-submit="updateAp()">
+					<div class="form-row">
+						<div class="form-group col-md-10 offset-1">
+							<img src="{{foto_user}}" class="img-fluid rounded-0 img-resp">
+							<div>
+								<i class="fa fa-camera-retro fa-2x ml-2 mt-3" id="iconF"></i>
+							</div>
+						</div>
+						<div class="form-group col-md-12">
+							<input type="file" class="d-flex d-inline-block mt-1" style="opacity: 0;" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+							 ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}" style="border-style: none"
+							 ng-change="cambio()">
+						</div>
+						<div class="form-group col-md-12">
+							<label>Contraseña Actual</label>
+							<input type="password" class="form-control" placeholder="Ingrese contraseña actual" required ng-model="aprendis.contrasena_actual">
+						</div>
+						<div class="form-group col-md-12">
+							<label>Contraseña nueva</label>
+							<input type="password" class="form-control" placeholder="Contraseña nueva" required ng-model="aprendis.contrasena_nueva"
+							 id="pass1">
+
+						</div>
+						<div class="form-group col-md-12">
+							<label>Repetir contraseña</label>
+							<input type="password" class="form-control" placeholder="Repertir contraseña " required ng-model="contrasena_repetida" id="pass2">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-success">Guardar cambios</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
